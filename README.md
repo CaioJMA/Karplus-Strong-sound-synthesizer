@@ -38,11 +38,17 @@ $$
 <p align="justify">
 Neste contexto, $$\bar{x}[n]$$ representa o sinal de entrada de suporte finito (duração $$"L"$$) e $$α$$ controla o decaimento do sinal no laço de realimentação. Quando $$α = 1$$, o sinal se repete indefinidamente, enquanto valores de $$α < 1$$ resultam em um decaimento exponencial do sinal ao longo do tempo.
 </p>
+<p align="justify">
+A partir da implementação dos códigos MATLAB $$"RespImpulso"$$ e $$"RespMagnitudeFase"$$, é possível encontrar as Respostas ao Impulso, Magnitude $$|H(e^{j\omega})|$$ e Fase $$\theta(e^{j\omega})$$ para casos particulares de $$"L"$$ e $$α$$.
+</p>
 
 # Síntese de Sinais
 
 <p align="justify">
 Através do código MATLAB *"SintetizarSinais"*, obteve-se os sinais de uma Senoide, Triangular, Quadrada e Aleatória (com Distribuição Normal e Desvio Padrão igual a 1) com $$L = 100$$ amostras e 10 períodos. Enquanto que através do código MATLAB $$“TocarSinais”$$, é possível tocar os sinais sintetizados.
+</p>
+<p align="justify">
+Além idsso, através do código MATLAB $$"MagnitudeFaseSintetizado"$$, adquire-se as Respostas de Magnitude e Fase de cada um dos sinais sintetizados.
 </p>
 
 # Gerador de Tons e Escala Diatônica de Dó
@@ -51,5 +57,11 @@ Através do código MATLAB *"SintetizarSinais"*, obteve-se os sinais de uma Seno
 Através do código MATLAB $$"SinaisAleatorios"$$, obteve-se diferentes gráficos de Forma de Onda das notas Dó, Ré, Mi, Fá, Sol, Lá, Si dentro da base de Lá (220 Hz) simulando o efeito de cordas através da estimulação por um sinal aleatório. O sinal aleatório inicial desempenha um papel crucial no método de Karplus-Strong, que é amplamente utilizado para a síntese de sons de cordas em processamento digital de sinais. Este método simula a vibração de uma corda vibrante ao utilizar um filtro digital baseado em um buffer de amostras. O sinal aleatório inicial, frequentemente gerado a partir de uma sequência de valores aleatórios, é essencial porque representa a excitação inicial da corda, que imita as vibrações complexas e desordenadas que ocorrem quando uma corda é percutida ou dedilhada. Dessa forma, através do código MATLAB $$"EscalaDiatonicaDo"$$, é possível tocar os sinais das notas da Escala Diatônica de Dó Maior na 3ª Oitava.
 </p>
 
-# Análises Extras
+# A Interface Gráfica
 
+<p align="justify">
+A interface gráfica, presente no arquivo $$“InterfaceGrafica”$$, desenvolvida em MATLAB utilizando o App Designer tem como objetivo facilitar a interação do usuário com o algoritmo de Karplus-Strong, permitindo a geração e manipulação das sete notas da escala diatônica de Dó maior na terceira oitava. A interface é composta por botões correspondentes a cada uma das notas (Dó, Ré, Mi, Fá, Sol, Lá, Si), os quais, ao serem pressionados, ativam a reprodução da nota correspondente através de um algoritmo de síntese de som.
+</p>
+<p align="justify">
+Além dos botões das notas, a interface inclui dois controles numéricos (spinners), que permitem ao usuário ajustar a duração e o volume de cada nota. O controle de duração define o tempo em segundos pelo qual a nota será reproduzida, enquanto o controle de volume ajusta a amplitude do som, influenciando diretamente a intensidade percebida.
+</p>
