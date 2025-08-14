@@ -4,4 +4,6 @@ A síntese de áudio tem desempenhado um papel fundamental no desenvolvimento de
 
 Este projeto implementa e analisa o **Algoritmo de Karplus-Strong**, envolvendo desde a formulação matemática até a geração de notas musicais específicas.
 
-A equação de diferenças para o algoritmo de Karplus-Strong é derivada levando em conta que o sistema é composto por um gerador de ondas de curta duração \( \bar{x}[n] \) e um laço de realimentação com \( L \) unidades de atraso e um fator de ganho \( \alpha \).
+# Equações de Diferenças
+
+A equação de diferenças para o algoritmo de Karplus-Strong é derivada levando em conta que o sistema é composto por um gerador de ondas de curta duração e um laço de realimentação com "L" unidades de atraso e um fator de ganho α.
