@@ -1,22 +1,22 @@
-# 🎸 Karplus Strong Sound Synthesizer
+# 🎸 Karplus-Strong Sound Synthesizer
 
 <p align="justify">
-A síntese de áudio tem desempenhado um papel fundamental no desenvolvimento de instrumentos musicais eletrônicos e em diversas aplicações de processamento de sinal. Um dos métodos clássicos de síntese é o algoritmo de Karplus-Strong, introduzido nos anos 1980, que é notoriamente eficaz para a geração de sons semelhantes a instrumentos de cordas, como vioilões, guitarras, baixos e harpas. Este algoritmo combina conceitos de processamento digital de sinais com técnicas de retroalimentação e filtragem para produzir sons que são tanto agradáveis quanto realistas.
+Audio synthesis has played a fundamental role in the development of electronic musical instruments and in various signal processing applications. One of the classic synthesis methods is the Karplus-Strong algorithm, introduced in the 1980s, which is notably effective for generating sounds similar to string instruments such as guitars, basses, and harps. This algorithm combines concepts from digital signal processing with feedback and filtering techniques to produce sounds that are both pleasant and realistic.
 </p>
 <p align="justify">
-Este projeto implementa e analisa o Algoritmo de Karplus-Strong, envolvendo desde a formulação matemática até a geração de notas musicais específicas.
+This project implements and analyzes the Karplus-Strong Algorithm, covering everything from mathematical formulation to the generation of specific musical notes.
 </p>
 
-# Equações de Diferenças
+# Difference Equations
 
 <p align="justify">
-A equação de diferenças para o algoritmo de Karplus-Strong é derivada levando em conta que o sistema é composto por um gerador de ondas de curta duração e um laço de realimentação com $$"L"$$ unidades de atraso e um fator de ganho $$α$$.
+The difference equation for the Karplus-Strong algorithm is derived considering that the system consists of a short-duration waveform generator and a feedback loop with $$"L"$$ delay units and a gain factor $$α$$.
 </p>
 <p align="justify">
-O algoritmo Karplus-Strong pode ser descrito em termos de uma equação de diferenças que leva em conta um filtro de atraso (com atraso de $$"L"$$ amostras) e uma multiplicação por um ganho $$α$$. A saída $$y[n]$$ em um dado instante $$"n"$$ depende da entrada $$x[n]$$ e da saída em instantes anteriores.
+The Karplus-Strong algorithm can be described in terms of a difference equation that takes into account a delay filter (with a delay of $$"L"$$ samples) and multiplication by a gain $$α$$. The output $$y[n]$$ at a given instant $$"n"$$ depends on the input $$x[n]$$ and on outputs at previous instants.
 </p>
 <p align="justify">
-A equação de diferenças para $$y[n]$$ pode ser dada por:
+The difference equation for $$y[n]$$ can be given by:
 </p>
 
 $$
@@ -24,44 +24,44 @@ y[n] = x[n] + \alpha \cdot y[n - L]
 $$
 
 <p align="justify">
-O sinal de saída $$y[n]$$ é dado por:
+The output signal $$y[n]$$ is given by:
 </p>
 
 $$
 y[n] =
 \begin{cases}
-\bar{x}[n], & \text{para } 0 \leq n < L \\
-\alpha \ \cdot y[n - L], & \text{para } n \geq L
+\bar{x}[n], & \text{for } 0 \leq n < L \\
+\alpha \ \cdot y[n - L], & \text{for } n \geq L
 \end{cases}
 $$
 
 <p align="justify">
-Neste contexto, $$\bar{x}[n]$$ representa o sinal de entrada de suporte finito (duração $$"L"$$) e $$α$$ controla o decaimento do sinal no laço de realimentação. Quando $$α = 1$$, o sinal se repete indefinidamente, enquanto valores de $$α < 1$$ resultam em um decaimento exponencial do sinal ao longo do tempo.
+In this context, $$\bar{x}[n]$$ represents the finite-support input signal (duration $$"L"$$), and $$α$$ controls the decay of the signal in the feedback loop. When $$α = 1$$, the signal repeats indefinitely, while values of $$α < 1$$ result in an exponential decay of the signal over time.
 </p>
 <p align="justify">
-A partir da implementação dos códigos MATLAB $$"RespImpulso"$$ e $$"RespMagnitudeFase"$$, é possível encontrar as Respostas ao Impulso, Magnitude $$|H(e^{j\omega})|$$ e Fase $$\theta(e^{j\omega})$$ para casos particulares de $$"L"$$ e $$α$$.
+From the implementation of the MATLAB codes $$"RespImpulso"$$ and $$"RespMagnitudeFase"$$, it is possible to obtain the Impulse Response, Magnitude $$|H(e^{j\omega})|$$, and Phase $$\theta(e^{j\omega})$$ for specific cases of $$"L"$$ and $$α$$.
 </p>
 
-# Síntese de Sinais
+# Signal Synthesis
 
 <p align="justify">
-Através do código MATLAB *"SintetizarSinais"*, obteve-se os sinais de uma Senoide, Triangular, Quadrada e Aleatória (com Distribuição Normal e Desvio Padrão igual a 1) com $$L = 100$$ amostras e 10 períodos. Enquanto que através do código MATLAB $$“TocarSinais”$$, é possível tocar os sinais sintetizados.
+Using the MATLAB code *"SintetizarSinais"*, we obtained signals of Sine, Triangle, Square, and Random (with Normal Distribution and Standard Deviation equal to 1) with $$L = 100$$ samples and 10 periods. Using the MATLAB code $$“TocarSinais”$$, it is possible to play the synthesized signals.
 </p>
 <p align="justify">
-Além idsso, através do código MATLAB $$"MagnitudeFaseSintetizado"$$, adquire-se as Respostas de Magnitude e Fase de cada um dos sinais sintetizados.
+Additionally, using the MATLAB code $$"MagnitudeFaseSintetizado"$$, the Magnitude and Phase Responses of each synthesized signal were obtained.
 </p>
 
-# Gerador de Tons e Escala Diatônica de Dó
+# Tone Generator and C Major Diatonic Scale
 
 <p align="justify">
-Através do código MATLAB $$"SinaisAleatorios"$$, obteve-se diferentes gráficos de Forma de Onda das notas Dó, Ré, Mi, Fá, Sol, Lá, Si dentro da base de Lá (220 Hz) simulando o efeito de cordas através da estimulação por um sinal aleatório. O sinal aleatório inicial desempenha um papel crucial no método de Karplus-Strong, que é amplamente utilizado para a síntese de sons de cordas em processamento digital de sinais. Este método simula a vibração de uma corda vibrante ao utilizar um filtro digital baseado em um buffer de amostras. O sinal aleatório inicial, frequentemente gerado a partir de uma sequência de valores aleatórios, é essencial porque representa a excitação inicial da corda, que imita as vibrações complexas e desordenadas que ocorrem quando uma corda é percutida ou dedilhada. Dessa forma, através do código MATLAB $$"EscalaDiatonicaDo"$$, é possível tocar os sinais das notas da Escala Diatônica de Dó Maior na 3ª Oitava.
+Using the MATLAB code $$"SinaisAleatorios"$$, we obtained different waveform plots of the notes C, D, E, F, G, A, B within the A base (220 Hz), simulating the effect of strings through excitation by a random signal. The initial random signal plays a crucial role in the Karplus-Strong method, which is widely used for string sound synthesis in digital signal processing. This method simulates the vibration of a plucked string by using a digital filter based on a sample buffer. The initial random signal, often generated from a sequence of random values, is essential because it represents the initial excitation of the string, imitating the complex and chaotic vibrations that occur when a string is plucked or struck. Thus, using the MATLAB code $$"EscalaDiatonicaDo"$$, it is possible to play the notes of the C Major Diatonic Scale in the 3rd Octave.
 </p>
 
-# A Interface Gráfica
+# Graphical Interface
 
 <p align="justify">
-A interface gráfica, presente no arquivo $$“InterfaceGrafica”$$, desenvolvida em MATLAB utilizando o App Designer tem como objetivo facilitar a interação do usuário com o algoritmo de Karplus-Strong, permitindo a geração e manipulação das sete notas da escala diatônica de Dó maior na terceira oitava. A interface é composta por botões correspondentes a cada uma das notas (Dó, Ré, Mi, Fá, Sol, Lá, Si), os quais, ao serem pressionados, ativam a reprodução da nota correspondente através de um algoritmo de síntese de som.
+The graphical interface, present in the $$“InterfaceGrafica”$$ file, developed in MATLAB using the App Designer, aims to facilitate user interaction with the Karplus-Strong algorithm, allowing the generation and manipulation of the seven notes of the C Major Diatonic Scale in the third octave. The interface consists of buttons corresponding to each of the notes (C, D, E, F, G, A, B), which, when pressed, trigger the playback of the corresponding note through a sound synthesis algorithm.
 </p>
 <p align="justify">
-Além dos botões das notas, a interface inclui dois controles numéricos (spinners), que permitem ao usuário ajustar a duração e o volume de cada nota. O controle de duração define o tempo em segundos pelo qual a nota será reproduzida, enquanto o controle de volume ajusta a amplitude do som, influenciando diretamente a intensidade percebida.
+In addition to the note buttons, the interface includes two numeric controls (spinners) that allow the user to adjust the duration and volume of each note. The duration control sets the time in seconds for which the note will be played, while the volume control adjusts the amplitude of the sound, directly influencing the perceived loudness.
 </p>
