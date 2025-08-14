@@ -38,3 +38,18 @@ $$
 <p align="justify">
 Neste contexto, $$\bar{x}[n]$$ representa o sinal de entrada de suporte finito (duração $$"L"$$) e $$α$$ controla o decaimento do sinal no laço de realimentação. Quando $$α = 1$$, o sinal se repete indefinidamente, enquanto valores de $$α < 1$$ resultam em um decaimento exponencial do sinal ao longo do tempo.
 </p>
+
+# Síntese de Sinais
+
+<p align="justify">
+Através do código MATLAB *"SintetizarSinais"*, obteve-se os sinais de uma Senoide, Triangular, Quadrada e Aleatória (com Distribuição Normal e Desvio Padrão igual a 1) com $$L = 100$$ amostras e 10 períodos. Enquanto que através do código MATLAB $$“TocarSinais”$$, é possível tocar os sinais sintetizados.
+</p>
+
+# Gerador de Tons e Escala Diatônica de Dó
+
+<p align="justify">
+Através do código MATLAB $$"SinaisAleatorios"$$, obteve-se diferentes gráficos de Forma de Onda das notas Dó, Ré, Mi, Fá, Sol, Lá, Si dentro da base de Lá (220 Hz) simulando o efeito de cordas através da estimulação por um sinal aleatório. O sinal aleatório inicial desempenha um papel crucial no método de Karplus-Strong, que é amplamente utilizado para a síntese de sons de cordas em processamento digital de sinais. Este método simula a vibração de uma corda vibrante ao utilizar um filtro digital baseado em um buffer de amostras. O sinal aleatório inicial, frequentemente gerado a partir de uma sequência de valores aleatórios, é essencial porque representa a excitação inicial da corda, que imita as vibrações complexas e desordenadas que ocorrem quando uma corda é percutida ou dedilhada. Dessa forma, através do código MATLAB $$"EscalaDiatonicaDo"$$, é possível tocar os sinais das notas da Escala Diatônica de Dó Maior na 3ª Oitava.
+</p>
+
+# Análises Extras
+
