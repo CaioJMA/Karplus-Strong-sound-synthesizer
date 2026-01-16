@@ -39,22 +39,22 @@ $$
 In this context, $$\bar{x}[n]$$ represents the finite-support input signal (duration $$"L"$$), and $$α$$ controls the decay of the signal in the feedback loop. When $$α = 1$$, the signal repeats indefinitely, while values of $$α < 1$$ result in an exponential decay of the signal over time.
 </p>
 <p align="justify">
-From the implementation of the MATLAB codes $$"RespImpulso"$$ and $$"RespMagnitudeFase"$$, it is possible to obtain the Impulse Response, Magnitude $$|H(e^{j\omega})|$$, and Phase $$\theta(e^{j\omega})$$ for specific cases of $$"L"$$ and $$α$$.
+From the implementation of the MATLAB codes $$"ImpulseResponse"$$ and $$"FrequencyResponse"$$, it is possible to obtain the Impulse Response, Magnitude $$|H(e^{j\omega})|$$, and Phase $$\theta(e^{j\omega})$$ for specific cases of $$"L"$$ and $$α$$.
 </p>
 
 # Signal Synthesis
 
 <p align="justify">
-Using the MATLAB code *"SintetizarSinais"*, we obtained signals of Sine, Triangle, Square, and Random (with Normal Distribution and Standard Deviation equal to 1) with $$L = 100$$ samples and 10 periods. Using the MATLAB code $$“TocarSinais”$$, it is possible to play the synthesized signals.
+Using the MATLAB code $$"SignalSynthesis"$$, we obtained signals of Sine, Triangle, Square, and Random (with Normal Distribution and Standard Deviation equal to 1) with $$L = 100$$ samples and 10 periods. Using the MATLAB code $$“PlayAudio”$$, it is possible to play the synthesized signals.
 </p>
 <p align="justify">
-Additionally, using the MATLAB code $$"MagnitudeFaseSintetizado"$$, the Magnitude and Phase Responses of each synthesized signal were obtained.
+Additionally, using the MATLAB code $$"SynthMagnitudePhase"$$, the Magnitude and Phase Responses of each synthesized signal were obtained.
 </p>
 
 # Tone Generator and C Major Diatonic Scale
 
 <p align="justify">
-Using the MATLAB code $$"SinaisAleatorios"$$, we obtained different waveform plots of the notes C, D, E, F, G, A, B within the A base (220 Hz), simulating the effect of strings through excitation by a random signal. The initial random signal plays a crucial role in the Karplus-Strong method, which is widely used for string sound synthesis in digital signal processing. This method simulates the vibration of a plucked string by using a digital filter based on a sample buffer. The initial random signal, often generated from a sequence of random values, is essential because it represents the initial excitation of the string, imitating the complex and chaotic vibrations that occur when a string is plucked or struck. Thus, using the MATLAB code $$"EscalaDiatonicaDo"$$, it is possible to play the notes of the C Major Diatonic Scale in the 3rd Octave.
+Using the MATLAB code $$"RandomSignals"$$, we obtained different waveform plots of the notes C, D, E, F, G, A, B within the A base (220 Hz), simulating the effect of strings through excitation by a random signal. The initial random signal plays a crucial role in the Karplus-Strong method, which is widely used for string sound synthesis in digital signal processing. This method simulates the vibration of a plucked string by using a digital filter based on a sample buffer. The initial random signal, often generated from a sequence of random values, is essential because it represents the initial excitation of the string, imitating the complex and chaotic vibrations that occur when a string is plucked or struck. Thus, using the MATLAB code $$"CScaleDiatonic"$$, it is possible to play the notes of the C Major Diatonic Scale in the 3rd Octave.
 </p>
 
 # Graphical Interface
@@ -65,3 +65,12 @@ The graphical interface, present in the $$“InterfaceGrafica”$$ file, develop
 <p align="justify">
 In addition to the note buttons, the interface includes two numeric controls (spinners) that allow the user to adjust the duration and volume of each note. The duration control sets the time in seconds for which the note will be played, while the volume control adjusts the amplitude of the sound, directly influencing the perceived loudness.
 </p>
+
+# Python Codes
+
+<p align="justify">
+The Python codes in this project require some libraries, which are listed in the <code>requirements.txt</code> file. All dependencies can be installed at once using the command:
+</p>
+
+```bash
+pip install -r requirements.txt
