@@ -39,22 +39,22 @@ $$
 Here, $$\bar{x}[n]$$ represents the finite-support input signal of duration $$L$$, and $$\alpha$$ controls the decay of the signal in the feedback loop. When $$\alpha = 1$$, the signal repeats indefinitely; values of $$\alpha < 1$$ result in an exponential decay over time.
 </p>
 <p align="justify">
-Using the MATLAB codes "ImpulseResponse" and "FrequencyResponse", it is possible to obtain the Impulse Response, Magnitude $$|H(e^{j\omega})|$$, and Phase $$\theta(e^{j\omega})$$ for specific values of $$L$$ and $$\alpha$$.
+Using the codes "ImpulseResponse" and "FrequencyResponse", it is possible to obtain the Impulse Response, Magnitude $$|H(e^{j\omega})|$$, and Phase $$\theta(e^{j\omega})$$ for specific values of $$L$$ and $$\alpha$$.
 </p>
 
 # Signal Synthesis
 
 <p align="justify">
-The MATLAB code "SignalSynthesis" was used to generate signals of Sine, Triangle, Square, and Random types (with Normal Distribution and standard deviation equal to 1), with $$L = 100$$ samples and 10 periods. The code "PlayAudio" allows the synthesized signals to be played.
+The code "SignalSynthesis" was used to generate signals of Sine, Triangle, Square, and Random types (with Normal Distribution and standard deviation equal to 1), with $$L = 100$$ samples and 10 periods. The code "PlayAudio" allows the synthesized signals to be played.
 </p>
 <p align="justify">
-Additionally, using the MATLAB code "SynthMagnitudePhase", the Magnitude and Phase Responses of each synthesized signal were obtained.
+Additionally, using the code "SynthMagnitudePhase", the Magnitude and Phase Responses of each synthesized signal were obtained.
 </p>
 
 # Tone Generator and C Major Diatonic Scale
 
 <p align="justify">
-The MATLAB code "RandomSignals" was used to generate waveform plots of the notes C, D, E, F, G, A, B using A4 (220 Hz) as the reference pitch, simulating string excitation via a random input signal. The initial random signal is crucial in the Karplus-Strong method, as it simulates the excitation of a plucked string through a digital filter with a sample buffer. By using "CScaleDiatonic", the notes of the C Major Diatonic Scale in the 3rd octave can be played.
+The code "RandomSignals" was used to generate waveform plots of the notes C, D, E, F, G, A, B using A4 (220 Hz) as the reference pitch, simulating string excitation via a random input signal. The initial random signal is crucial in the Karplus-Strong method, as it simulates the excitation of a plucked string through a digital filter with a sample buffer. By using "CScaleDiatonic", the notes of the C Major Diatonic Scale in the 3rd octave can be played.
 </p>
 
 # Graphical Interface
